@@ -1,0 +1,96 @@
+.SudokuBoardDisplay {
+  border-radius: 2px;
+  padding: 1px;
+
+  display: grid;
+  grid: repeat(9, 1fr) / repeat(9, 1fr);
+
+  background: var(--light-dark);
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.SudokuBoardDisplay--large {
+  width: 240px;
+  height: 240px;
+}
+@media screen and (min-width: 376px) {
+  .SudokuBoardDisplay--large {
+    width: 360px;
+    height: 360px;
+
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 512px) {
+  .SudokuBoardDisplay--large {
+    width: 480px;
+    height: 480px;
+
+    font-size: 1.75rem;
+  }
+}
+
+.SudokuBoardDisplay--small {
+  width: 240px;
+  height: 240px;
+}
+
+.SudokuBoardDisplay__innerSquare {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  background: inherit;
+  color: inherit;
+  font-size: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.SudokuBoardDisplay__innerSquare--faded {
+  background: var(--light-dark-faded);
+  color: var(--dark-light);
+}
+
+.SudokuBoardDisplay__outerSquare {
+  border-top: 1px solid var(--light-darker);
+  border-left: 1px solid var(--light-darker);
+  border-right: none;
+  border-bottom: none;
+}
+.SudokuBoardDisplay__outerSquare:nth-last-child(n + 73) {
+  border-top: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(n + 73) {
+  border-bottom: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(9n + 1) {
+  border-left: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(9n + 9) {
+  border-right: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(9n + 4) {
+  border-left: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(9n + 7) {
+  border-left: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(n + 28):not(:nth-child(n + 37)) {
+  border-top: 2px solid var(--light-darker);
+}
+.SudokuBoardDisplay__outerSquare:nth-child(n + 55):not(:nth-child(n + 64)) {
+  border-top: 2px solid var(--light-darker);
+}
+
+/* Adds padding so that the :focus-visible outline on the child <input> is
+   visible. */
+.SudokuBoardDisplay__outerSquare--input {
+  padding: 2px;
+}
